@@ -23,5 +23,8 @@ Thank you to these resources (i am like a total c# noob):
 * https://stackoverflow.com/questions/129972/convert-an-image-to-xaml
 * https://social.msdn.microsoft.com/Forums/vstudio/en-US/01b6f20c-d4fb-4956-a3f6-d5e5d91bd239/wpf-menu-for-system-tray-icon?forum=wpf
 * https://www.c-sharpcorner.com/uploadfile/mahesh/using-windows-forms-controls-in-wpf/
+* https://www.icoconverter.com/
+* https://www.c-sharpcorner.com/UploadFile/f9f215/windows-registry/
+* https://learn.microsoft.com/en-us/dotnet/api/system.int32.tryparse?view=net-7.0
 
 ok love you xoxoxo
