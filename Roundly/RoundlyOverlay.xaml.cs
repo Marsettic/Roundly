@@ -23,16 +23,26 @@ namespace Roundly
     /// </summary>
     public partial class RoundlyOverlay : Window
     {
-
+        int RoundCorner = 0;
         private Winforms.NotifyIcon TrayIcon = new Winforms.NotifyIcon();
+        SettingsSystem Settings = new SettingsSystem();
 
         public RoundlyOverlay()
         {
+
+            if (Settings.ReadSettings("NotFirstTime") != "true")
+            {
+                Settings.SaveSettings("NotFirstTime", "true");
+                Settings.SaveSettings("RoundCornerShape", "true");
+                Settings.SaveSettings("RoundCornerAMT", "10");
+            }
+            Int32.TryParse(Settings.ReadSettings("RoundCornerAMT"), out RoundCorner);
 
             this.TrayIcon.MouseDown += new Winforms.MouseEventHandler(TrayIcon_MouseDown);
             this.TrayIcon.Icon = Roundly.Properties.Resources.RoundlyLogo1;
             this.TrayIcon.Visible = true;
             InitializeComponent();
+
         }
 
         void TrayIcon_MouseDown(object sender, Winforms.MouseEventArgs e)
@@ -44,7 +54,7 @@ namespace Roundly
             }
         }
 
-        void SetRoundSize(int RoundSize)
+        void SetCornerSize(int RoundSize)
         {
             LTCorner.Width = RoundSize;
             LTCorner.Height = RoundSize;
@@ -57,6 +67,18 @@ namespace Roundly
 
             RBCorner.Width = RoundSize;
             RBCorner.Height = RoundSize;
+
+            ELTCorner.Width = RoundSize;
+            ELTCorner.Height = RoundSize;
+
+            ERTCorner.Width = RoundSize;
+            ERTCorner.Height = RoundSize;
+
+            ELBCorner.Width = RoundSize;
+            ELBCorner.Height = RoundSize;
+
+            ERBCorner.Width = RoundSize;
+            ERBCorner.Height = RoundSize;
         }
 
         private void RoundlyOverlay_Loaded(object sender, RoutedEventArgs e)
@@ -65,7 +87,13 @@ namespace Roundly
             this.WindowStartupLocation = WindowStartupLocation.Manual;
             this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
             this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
-            SetRoundSize(20);
+
+            if (Settings.ReadSettings("RoundCornerShape") == "true")
+                RoundCornerGrid.Visibility = Visibility.Visible;
+            else
+                EdgeCornerGrid.Visibility = Visibility.Visible;
+
+            SetCornerSize(RoundCorner);
         }
 
         private void Window_LostFocus(object sender, RoutedEventArgs e)

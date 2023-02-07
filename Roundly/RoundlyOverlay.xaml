@@ -15,50 +15,99 @@
             <MenuItem Header="Open Settings" Click="OpenSettings_Click"/>
         </ContextMenu>
     </Window.Resources>
-    <Grid>
-        <Path Name="LTCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill">
-            <Path.Data>
-                <PathGeometry Figures="M 0.23294297 325.66668 0 0 325.66668 0.23294297 C 504.78335 0.3610616 648.63336 0.65118288 645.33336 0.8776569 517.68766 9.6377881 408.11032 45.875612 307.33334 112.6561 181.98873 195.71649 89.167314 313.93772 39.376892 453.93664 17.429977 515.64619 5.8911985 573.01633 0.88152831 645.33336 0.65292501 648.63336 0.3610616 504.78335 0.23294297 325.66668 Z" FillRule="NonZero"/>
-            </Path.Data>
-        </Path>
-        <Path x:Name="RTCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
-            <Path.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Path.RenderTransform>
-            <Path.Data>
-                <PathGeometry Figures="M 0.23294297 325.66668 0 0 325.66668 0.23294297 C 504.78335 0.3610616 648.63336 0.65118288 645.33336 0.8776569 517.68766 9.6377881 408.11032 45.875612 307.33334 112.6561 181.98873 195.71649 89.167314 313.93772 39.376892 453.93664 17.429977 515.64619 5.8911985 573.01633 0.88152831 645.33336 0.65292501 648.63336 0.3610616 504.78335 0.23294297 325.66668 Z" FillRule="NonZero"/>
-            </Path.Data>
-        </Path>
-        <Path x:Name="LBCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
-            <Path.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="270"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Path.RenderTransform>
-            <Path.Data>
-                <PathGeometry Figures="M 0.23294297 325.66668 0 0 325.66668 0.23294297 C 504.78335 0.3610616 648.63336 0.65118288 645.33336 0.8776569 517.68766 9.6377881 408.11032 45.875612 307.33334 112.6561 181.98873 195.71649 89.167314 313.93772 39.376892 453.93664 17.429977 515.64619 5.8911985 573.01633 0.88152831 645.33336 0.65292501 648.63336 0.3610616 504.78335 0.23294297 325.66668 Z" FillRule="NonZero"/>
-            </Path.Data>
-        </Path>
-        <Path x:Name="RBCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
-            <Path.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="180"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Path.RenderTransform>
-            <Path.Data>
-                <PathGeometry Figures="M 0.23294297 325.66668 0 0 325.66668 0.23294297 C 504.78335 0.3610616 648.63336 0.65118288 645.33336 0.8776569 517.68766 9.6377881 408.11032 45.875612 307.33334 112.6561 181.98873 195.71649 89.167314 313.93772 39.376892 453.93664 17.429977 515.64619 5.8911985 573.01633 0.88152831 645.33336 0.65292501 648.63336 0.3610616 504.78335 0.23294297 325.66668 Z" FillRule="NonZero"/>
-            </Path.Data>
-        </Path>
+
+    <Grid x:Name="MainGrid">
+        <Grid x:Name="RoundCornerGrid" Visibility="Hidden">
+            <Path Name="LTCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill">
+                <Path.Data>
+                    <PathGeometry Figures="M 0.23294297 325.66668 0 0 325.66668 0.23294297 C 504.78335 0.3610616 648.63336 0.65118288 645.33336 0.8776569 517.68766 9.6377881 408.11032 45.875612 307.33334 112.6561 181.98873 195.71649 89.167314 313.93772 39.376892 453.93664 17.429977 515.64619 5.8911985 573.01633 0.88152831 645.33336 0.65292501 648.63336 0.3610616 504.78335 0.23294297 325.66668 Z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="RTCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Data>
+                    <PathGeometry Figures="M 0.23294297 325.66668 0 0 325.66668 0.23294297 C 504.78335 0.3610616 648.63336 0.65118288 645.33336 0.8776569 517.68766 9.6377881 408.11032 45.875612 307.33334 112.6561 181.98873 195.71649 89.167314 313.93772 39.376892 453.93664 17.429977 515.64619 5.8911985 573.01633 0.88152831 645.33336 0.65292501 648.63336 0.3610616 504.78335 0.23294297 325.66668 Z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="LBCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Data>
+                    <PathGeometry Figures="M 0.23294297 325.66668 0 0 325.66668 0.23294297 C 504.78335 0.3610616 648.63336 0.65118288 645.33336 0.8776569 517.68766 9.6377881 408.11032 45.875612 307.33334 112.6561 181.98873 195.71649 89.167314 313.93772 39.376892 453.93664 17.429977 515.64619 5.8911985 573.01633 0.88152831 645.33336 0.65292501 648.63336 0.3610616 504.78335 0.23294297 325.66668 Z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="RBCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Data>
+                    <PathGeometry Figures="M 0.23294297 325.66668 0 0 325.66668 0.23294297 C 504.78335 0.3610616 648.63336 0.65118288 645.33336 0.8776569 517.68766 9.6377881 408.11032 45.875612 307.33334 112.6561 181.98873 195.71649 89.167314 313.93772 39.376892 453.93664 17.429977 515.64619 5.8911985 573.01633 0.88152831 645.33336 0.65292501 648.63336 0.3610616 504.78335 0.23294297 325.66668 Z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Grid>
+        <Grid x:Name="EdgeCornerGrid" Visibility="Hidden">
+            <Path Name="ELTCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill">
+                <Path.Data>
+                    <PathGeometry Figures="M 1154.1695 705.14127 V 364.47459 h 340.9991 340.999 l -340.6647 340.66668 c -187.3656 187.36667 -340.8152 340.66663 -340.9991 340.66663 -0.1838 0 -0.3343 -153.29996 -0.3343 -340.66663 z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="ERTCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Data>
+                    <PathGeometry Figures="M 1154.1695 705.14127 V 364.47459 h 340.9991 340.999 l -340.6647 340.66668 c -187.3656 187.36667 -340.8152 340.66663 -340.9991 340.66663 -0.1838 0 -0.3343 -153.29996 -0.3343 -340.66663 z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="ELBCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="270"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Data>
+                    <PathGeometry Figures="M 1154.1695 705.14127 V 364.47459 h 340.9991 340.999 l -340.6647 340.66668 c -187.3656 187.36667 -340.8152 340.66663 -340.9991 340.66663 -0.1838 0 -0.3343 -153.29996 -0.3343 -340.66663 z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+            <Path x:Name="ERBCorner" Fill="#FF000000" StrokeThickness="1.33333" Width="10" Height="10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Margin="0">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Data>
+                    <PathGeometry Figures="M 1154.1695 705.14127 V 364.47459 h 340.9991 340.999 l -340.6647 340.66668 c -187.3656 187.36667 -340.8152 340.66663 -340.9991 340.66663 -0.1838 0 -0.3343 -153.29996 -0.3343 -340.66663 z" FillRule="NonZero"/>
+                </Path.Data>
+            </Path>
+        </Grid>
     </Grid>
 </Window>

@@ -87,6 +87,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SettingsSystem.cs" />
     <Compile Include="RoundlySettings.xaml.cs">
       <DependentUpon>RoundlySettings.xaml</DependentUpon>
     </Compile>

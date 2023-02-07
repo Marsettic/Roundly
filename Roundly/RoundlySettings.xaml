@@ -14,8 +14,13 @@
                     <Button Content="&#xE711;" HorizontalAlignment="Right" Height="Auto" Margin="755,0,0,0" Width="40" Foreground="White" FontFamily="Segoe MDL2 Assets" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}"/>
                     <Button Content="&#xE738;" HorizontalAlignment="Right" Height="Auto" Width="40" Foreground="White" FontFamily="Segoe MDL2 Assets" Padding="0" Margin="0,0,40.286,0" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 </Grid>
-                <Label x:Name="CornerSliderText" Content="Corner Size : 1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#DDFFFFFF" Margin="10,51,0,0" FontWeight="Bold"/>
-                <Slider x:Name="CornerSlider" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="235" Foreground="White" Maximum="500" SmallChange="1" IsSnapToTickEnabled="True" ValueChanged="CornerSlider_ValueChanged" LargeChange="10"/>
+                <Border HorizontalAlignment="Left" Height="89" Margin="10,50,0,0" VerticalAlignment="Top" Width="266" Background="#FF1E1E1E" CornerRadius="5">
+                    <Grid>
+                        <Label x:Name="CornerSliderText" Content="Corner Size : 1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#DDFFFFFF" Margin="5,5,0,0" FontWeight="Bold"/>
+                        <Slider x:Name="CornerSlider" Margin="10,31,10.286,38.143" VerticalAlignment="Center" Foreground="White" Maximum="500" SmallChange="1" IsSnapToTickEnabled="True" ValueChanged="CornerSlider_ValueChanged" LargeChange="10"/>
+                        <Button x:Name="SaveCornerSizeButton" Content="Save" Margin="5,0,5.286,5" VerticalAlignment="Bottom" Foreground="White" Background="#FF2D2D2D" Height="26" FontWeight="Bold" FontSize="12" Click="SaveCornerSizeButton_Click"/>
+                    </Grid>
+                </Border>
             </Grid>
         </Border>
     </Grid>

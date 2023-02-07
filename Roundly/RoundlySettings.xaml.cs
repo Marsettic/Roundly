@@ -20,6 +20,9 @@ namespace Roundly
     /// </summary>
     public partial class RoundlySettings
     {
+
+        SettingsSystem Settings = new SettingsSystem();
+
         public RoundlySettings()
         {
             InitializeComponent();
@@ -32,5 +35,7 @@ namespace Roundly
             if (CornerSlider != null)
                 CornerSliderText.Content = "Corner Size : " + CornerSlider.Value;
         }
+
+        private void SaveCornerSizeButton_Click(object sender, RoutedEventArgs e) => Settings.SaveSettings("RoundCornerAMT", CornerSlider.Value.ToString());
     }
 }
