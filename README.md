@@ -3,7 +3,7 @@ We cut corners.
 
 Roundly is an Application written in XAML and C# that lets you round your PC's Screen.
 
-Features:
+Features (Planned):
 * Adjustable Corners
 * Change Color of Corners
 * Run on Startup
